@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertex Home</title>
+  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/NjN8KGL/vertex-logo-06.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <!--Stylesheet-->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="media.css" />
+  <script onload="mapContent();" src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"
+    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.2/maps/maps-web.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+  <!-- &--------------------------------------Home Section--------------------------------------- -->
+
+  <div class=" w-100 vh-100 d-block" id="Home_section">
+    <div class="home_content">
+      <!-- ^----------------------------------- Sidebar ---------------------------------------------- -->
+      <div class="bg-light sticky-top Side_bar">
+        <a href="http://85.31.237.210:8080/portal_v1/index.html"
+          class="d-block link-dark text-decoration-none Side_a_logo " title="" data-bs-toggle="tooltip"
+          data-bs-placement="right" data-bs-original-title="Icon-only">
+          <img src="https://i.ibb.co/NjN8KGL/vertex-logo-06.png" class="Side_v_logo" alt="v-Logo">
+          <!-- <img src="https://i.ibb.co/tZXHjwQ/Asset-1.png" class="v_logo" alt="v-Logo" /> -->
+        </a>
+        <div class="d-flex flex-column flex-row flex-nowrap bg-light2 align-items-center white_bg">
+          <ul
+            class=" d-flex nav nav-pills nav-flush flex-column flex-row align-items-center flex-nowrap mb-auto mx-auto text-center align-items-center ul_icon_sidebar">
+            <li class="li1">
+              <a href="#" class="nav-link nav-item py-3 px-2 active " title="" data-bs-toggle="tooltip"
+                data-bs-placement="right" data-bs-original-title="Home" id="Home">
+                <i class="bi bi-house fs-3"></i>
+              </a>
+            </li>
+            <li class="li2" onclick="toggleDiv()">
+              <a href="#" class="nav-link nav-item py-3 px-2 detection_icon" title="" data-bs-toggle="tooltip"
+                data-bs-placement="right" data-bs-original-title="Home" id="detect">
+                <div id="icon_land"></div>
+              </a>
+            </li>
+            <li class="li3">
+              <a href="#" class="nav-link nav-item py-3 px-2" title="" data-bs-toggle="tooltip"
+                data-bs-placement="right" data-bs-original-title="Dashboard">
+                <i class="bi-speedometer2 fs-3"></i>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="py-2 px-2 mb-2 nav-link nav-item" id="dropdownUser3" onclick="toggleDiv3()">
+            <i class="bi-person-circle h2"></i>
+          </a>
+          <div class="list_detection1 li6" id="profile_list">
+            <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li class="dropdown-item Log_out1">
+                <!-- <a class="dropdown-item Log_out" href="/index.html">Log Out</a> -->
+                <a class="dropdown-item Log_out" href="http://85.31.237.210:8080/portal_v1/index.html">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="list_detection">
+          <div class="list_Service_container">
+            <ul class="d-flex flex-column align-items-center justify-content-center shadow" id="Detection_services">
+              <li class="Montoring_project">
+                <a class="dropdown-item1 monitoring" id="Montoring_project" href="#">Monitoring Projects</a>
+              </li>
+              <li class="Land_Management"><a class="dropdown-item1" href="#" id="Land_Management">Land Management</a>
+              </li>
+              <li class="Forestry"><a class="dropdown-item1" href="#" id="Forestry">Forestry</a></li>
+              <li class="Agriculture"><a class="dropdown-item1" href="#" id="Agriculture">Agriculture</a></li>
+              <li class="Mineral_Resources"><a class="dropdown-item1" href="#" id="Mineral_Resources">Mineral Resources
+                  Management</a></li>
+              <li class="Water_Resources"><a class="dropdown-item1" href="#" id="Water_Resources">Water Resources
+                  Management</a></li>
+              <li class="National_Security_Defense"><a class="dropdown-item1" href="#"
+                  id="National_Security_Defense">National Security & Defense</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="list_detection2" id="Land_Management_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection</a>
+            </li>
+            <li><a class="dropdown-item1" href="#" id="Land_Use">Land Use</a></li>
+            <li><a class="dropdown-item1" href="#" id="land_cover">Land Cover</a></li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Montoring_project_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="Project">Tanzania Mega Mall
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Azuri_Towers_Nigeria">Azuri Towers Nigeria</a>
+            </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="TATU_CITY_KENYA">Tatu City Kenya</a>
+            </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Infrastructure_project">Infrastructure project</a>
+            </li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Forestry_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" id="Forest_Logging_Detection" href="#">Forest Logging Detection</a>
+            </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Wildfires">Wildfires Detection</a>
+            </li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Mineral_Resources_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="Oil_Spill_Detection">Oil Spill Detection</a>
+            </li>
+            <li><a class="dropdown-item1" href="#" id="Mining_Monitoring">Mining Monitoring</a>
+            </li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Water_Resources_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="Renaissance_Dam">Renaissance Dam</a>
+            </li>
+            <li><a class="dropdown-item1" href="#" id="Libya_Flooding">Libya Flooding</a></li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="National_Security_Defense_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="khartoum_airport">Khartoum Airport</a>
+            </li>
+            <li><a class="dropdown-item1" href="#" id="Sudan_Border">Crisis in Sudan Border</a></li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Agriculture_Menu">
+          <div class="internal_list">
+            <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+              <li>
+                <a class="dropdown-item1" href="#" id="Crop_Disease_Detection">Crop Disease Detection</a>
+              </li>
+              <li><a class="dropdown-item1" href="#" id="Crop_Health">Crop Health</a></li>
+              <li>
+                <a class="dropdown-item1" href="#" id="Crop_Classification">Crop Classification Kenya</a>
+              </li>
+              <li>
+                <a class="dropdown-item1" href="#" id="Dumyat">Crop Classification Dumyat(Egypt)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="list_detection2">
+        </div> -->
+    </div>
+    <!-- ^----------------------------------- End Sidebar ------------------------------------------- -->
+
+    <!-- *----------------------------------- Map ---------------------------------------------- -->
+    <div class="d-block justify-content-center align-items-center map vw-100 vh-100 overflow-hidden" id="map_section">
+      <div class="d-flex" id="map"></div>
+    </div>
+    <!-- *---------------------------------- End Map ------------------------------------------- -->
+  </div>
+  </div>
+
+  <div id="dialog_detect" class="dialog_detect row">
+    <div class="container_dashbord col-md-7 col-sm-7">
+      <div id="page">
+        <div class="news_image">
+          <a id="url_news" target="blank"
+            href="https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096">
+            <img src="../Geo File/Polygon Create/Screenshot.png" alt="" id="news" /></a>
+        </div>
+        <div class="wrapper">
+          <!-- &------------ Select Date ------------------ -->
+
+          <div class="select-menu" id="left_selector">
+            <div class="select-btn">
+              <span class="sBtn-text">Date</span>
+              <i class="bx bx-chevron-down"></i>
+            </div>
+            <div class="list_date_container">
+              <div class="ul_container2">
+                <ul class="options" id="image_date_left">
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="select-menu1" id="right_selector">
+            <div class="select-btn1">
+              <span class="sBtn-text1">Date</span>
+              <i class="bx bx-chevron-down"></i>
+            </div>
+            <div class="list_date_container">
+              <div class="ul_container2">
+                <ul class="options1" id="image_date_right">
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- &------------End Select Date ------------------ -->
+
+          <div class="before">
+            <img class="content-image" id="img_left" src="../Geo File/Polygon Create/2-2022.jpg" draggable="false" />
+          </div>
+          <div class="after">
+            <img class="content-image" id="img_right" src="../Geo File/Polygon Create/6-2023.jpg" draggable="false" />
+          </div>
+          <div class="scroller">
+            <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+              viewBox="0 0 100 100">
+              <polygon points="0 50 37 68 37 32 0 50" style="fill: #fff" />
+              <polygon points="100 50 64 32 64 68 100 50" style="fill: #fff" />
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container_dash col-md-5 col-sm-5">
+      <div class="dashbord d-flex flex-column">
+        <div class="timeline">
+          <img id="dashbord_img1" src="Dashbord/3.png" alt="">
+        </div>
+        <div class="container_row2">
+          <div class="piechart col-md-7">
+            <img id="dashbord_img2" src="Dashbord/4.png" alt="">
+          </div>
+          <div class="parchart col-md-5">
+            <img id="dashbord_img3" src="Dashbord/6.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="watermark">
+    <img src="https://i.ibb.co/tZXHjwQ/Asset-1.png" alt="" />
+  </div>
+  <div class="loading">
+    <svg id="V_logo" width="35%" height="15%" viewBox="0 0 726 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M142.648 8.05469L144.17 3.99999H139.839H115.839H113.727L113.015 5.98851L74.4459 113.683L36.0649 5.99284L35.3547 3.99999H33.2391H8.83905H4.50202L6.03189 8.05823L58.4319 147.058L59.1639 149H61.2391H87.6391H89.717L90.4475 147.055L142.648 8.05469Z"
+        stroke="white" stroke-width="6" />
+      <path
+        d="M232.706 66.2V63.2H229.706H184.706V28.4H235.706H238.706V25.4V6.8V3.8H235.706H158.906H155.906V6.8V146V149H158.906H235.706H238.706V146V127.4V124.4H235.706H184.706V87.8H229.706H232.706V84.8V66.2Z"
+        stroke="white" stroke-width="6" />
+      <path
+        d="M333.389 147.496L334.254 149H335.989H363.189H368.475L365.765 144.462L333.381 90.2384C342.946 87.2477 350.382 82.2608 355.434 75.1391C361.123 67.1714 363.989 58.2981 363.989 48.6C363.989 40.3683 361.997 32.8392 357.979 26.0852C354.043 19.2438 348.038 13.8724 340.14 9.92157C332.281 5.92295 322.789 3.99999 311.789 3.99999H263.789H260.789V6.99999V146V149H263.789H286.589H289.589V146V93.4H302.254L333.389 147.496ZM328.901 63.6463L328.884 63.6624L328.868 63.6787C325.362 67.1843 319.86 69.2 311.789 69.2H289.589V28.6H311.789C320.032 28.6 325.606 30.5687 329.102 33.9547L329.119 33.9718L329.137 33.9886C332.664 37.2947 334.589 42.0237 334.589 48.6C334.589 55.1419 332.616 60.0433 328.901 63.6463Z"
+        stroke="white" stroke-width="6" />
+      <path
+        d="M482.956 6.99999V3.99999H479.956H382.956H379.956V6.99999V25.6V28.6H382.956H417.156V146V149H420.156H442.956H445.956V146V28.6H479.956H482.956V25.6V6.99999Z"
+        stroke="white" stroke-width="6" />
+      <path
+        d="M576.847 66.2V63.2H573.847H528.847V28.4H579.847H582.847V25.4V6.8V3.8H579.847H503.047H500.047V6.8V146V149H503.047H579.847H582.847V146V127.4V124.4H579.847H528.847V87.8H573.847H576.847V84.8V66.2Z"
+        stroke="white" stroke-width="6" />
+      <path
+        d="M658.014 101.409L686.783 147.586L687.664 149H689.33H714.93H720.331L717.477 144.415L675.264 76.6014L717.675 8.58736L720.536 3.99999H715.13H689.73H688.006L687.138 5.48965L660.046 51.9852L631.077 5.41541L630.197 3.99999H628.53H602.93H597.524L600.384 8.58736L642.795 76.6014L600.583 144.415L597.729 149H603.13H628.53H630.253L631.121 147.512L658.014 101.409Z"
+        stroke="white" stroke-width="6" />
+    </svg>
+  </div>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
