@@ -62,6 +62,7 @@ const target5 = document.getElementById('Water_Resources_Menu');
 const hoverable6 = document.querySelector('.National_Security_Defense');
 const allhoverable6 = document.querySelectorAll('.main_list_li');
 const target6 = document.getElementById('National_Security_Defense_Menu');
+const container_data_dialog = document.getElementById('container_data_dialog');
 
 
 // todo:------------------------- i end here ----------------------------//
@@ -303,6 +304,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/2-2022.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/6-2023.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Screenshot.png");
@@ -335,6 +337,8 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/6-1-2023.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/10-3-2024.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Forest_Logging_News.png");
@@ -366,6 +370,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/land-C-S-image-2020.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/land-C-S-image-2023.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Screenshot.png");
@@ -398,6 +403,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Squatters_Camps-1-2020.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Squatters_Camps-12-2022.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Squatters_Camps_new.jpg");
@@ -431,25 +437,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.style.display = 'none';
-        element2.style.display = 'none';
-        element3.style.display = 'none';
-        element8.style.display = 'none';
-        element9.style.display = 'none';
-        element10.style.display = 'none';
-        element6.style.display = 'none';
-        element3.style.display = "none";
-        element8.style.display = "none";
-        element9.style.display = "none";
-        element10.style.display = "none";
-        element7.style.display = "none";
-        sBtn_text.innerText = "12-2022";
-        sBtn_text1.innerText = "1-2020";
-        container_dashbord.style.width = "100%";
-        container_dashbord.style.height = "100%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        element4.setAttribute("href", "https://www.sciencephoto.com/media/182797/view/squatter-camp");
+        container_data_dialog.style.display = 'none';
     });
 
 
@@ -464,6 +452,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/khartoum_airport_20-2-2023.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/khartoum_airport_4-5-2024.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/khartoum_airport_news.png");
@@ -497,6 +486,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Renaissance_Dam_11-2013.JPG");
         element2.setAttribute("src", "Geo File/Polygon Create/Renaissance_Dam_10-2023.JPG");
         element3.setAttribute("src", "Geo File/Polygon Create/Renaissance_Dam_news.png");
@@ -530,6 +520,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Sudan_Border_11-2022.JPG");
         element2.setAttribute("src", "Geo File/Polygon Create/Sudan_Border_5-2023.JPG");
         element3.setAttribute("src", "Geo File/Polygon Create/Sudan_Border_news.png");
@@ -562,6 +553,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Infrastructure_project_11-2020.jpeg");
         element2.setAttribute("src", "Geo File/Polygon Create/Infrastructure_project_12-2023.jpeg");
         element3.setAttribute("src", "Geo File/Polygon Create/Infrastructure_project_news.png");
@@ -593,6 +585,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Libya_satelliteImage1.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Land-use-image1.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Screenshot.png");
@@ -623,6 +616,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Azuri_Towers_Nigeria-5-2016.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Azuri_Towers_Nigeria-2-2024.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Azuri_Towers_Nigeria-new.png");
@@ -654,6 +648,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/TATU_CITY_KENYA-12-2017.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/TATU_CITY_KENYA-2-2024.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/TATU_CITY_KENYA-News.jpg");
@@ -687,6 +682,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Libya_Flooding_6-2023.JPG");
         element2.setAttribute("src", "Geo File/Polygon Create/Libya_Flooding_9-2023.JPG");
         element3.setAttribute("src", "Geo File/Polygon Create/Libya_Flooding_news.png");
@@ -720,6 +716,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Crop_Classification_Classification.png");
         element8.setAttribute("src", "Geo File/Polygon Create/Crop_Classification_parchart.jpg");
@@ -749,6 +746,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Mining_Monitoring-7-2013.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Mining_Monitoring-6-2022.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Mining_Monitoring_news.jpg");
@@ -780,6 +778,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Oil_Spill_27-7-2021.JPG");
         element2.setAttribute("src", "Geo File/Polygon Create/Oil_Spill_26-8-2021.JPG");
         element3.setAttribute("src", "Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
@@ -812,6 +811,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Wildfires-23-7-2023.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Wildfires-29-3-2024.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Wildfires-News.jpg");
@@ -844,6 +844,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Crop_Disease_Detection_Satellite-image.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Crop_Disease_Detection.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Crop_Disease_Detection-News.jpg");
@@ -876,6 +877,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        container_data_dialog.style.display = 'flex';
         element1.setAttribute("src", "Geo File/Polygon Create/Crop_Health-11-3-2023.jpg");
         element2.setAttribute("src", "Geo File/Polygon Create/Crop_Health-11-3-2023 NDVI.jpg");
         element3.setAttribute("src", "Geo File/Polygon Create/Crop_Health-News.jpg");
