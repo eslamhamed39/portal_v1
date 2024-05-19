@@ -663,12 +663,13 @@ h5 {
         opacity: 0;
         left: 390px;
     }
-    
+
     to {
         opacity: 1;
         left: 415px;
     }
 }
+
 @keyframes fadeIn3 {
     from {
         opacity: 0;
@@ -693,7 +694,9 @@ h5 {
     background-color: transparent;
     border: 0;
     border-radius: var(--bs-dropdown-item-border-radius, 0);
+    width: auto;
 }
+
 
 .list_detection ul {
     margin-top: 20;
@@ -744,6 +747,7 @@ h5 {
     width: auto;
     padding: 10px 0;
 }
+
 /* .internal_list{
     margin: 0 16px 0;
 } */
@@ -751,7 +755,7 @@ h5 {
 .list_detection2 ul li {
     width: 95%;
     border-radius: 30px;
-    padding:  0 25px 0;
+    padding: 0 25px 0;
 }
 
 .list_detection2 ul li a:hover {
@@ -1188,6 +1192,7 @@ svg {
 .dashbord .timeline {
     width: 100%;
     height: 55%;
+    border-radius: 30px;
     /* padding: 0px 0px 2.5px 0px; */
     margin-bottom: 10px;
 }
@@ -1221,7 +1226,7 @@ svg {
     width: 100%;
     /* padding: 2.5px 0px 0px 0px; */
     /* margin-left: px; */
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 
 }
 
@@ -1338,16 +1343,374 @@ svg {
 #Water_Resources_Menu {
     top: 218px;
 }
+
 #National_Security_Defense_Menu {
     top: 265px;
 }
 
-ul{
+ul {
     border-radius: 30px;
 }
 
-/* #container_data_dialog{ */
-    /* width: 100%;
-    height: 100%; */
+.video_container {
     /* background-color: #0011ff; */
-/* } */
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    display: none;
+}
+
+/* #video_element {
+    border-radius: 30px;
+} */
+
+video {
+    object-fit: fill;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+
+.custom-video__video {
+    border-radius: 40px;
+    cursor: pointer;
+    position: absolute;
+    width: 98%;
+    height: 96%;
+    top: 50%;
+    left: 50%;
+    border: 3px solid #0d6efd;
+    background-color: #0011ff;
+    transform: translate(-50%, -50%);
+}
+#video_element {
+    border-radius: 40px;
+    /* cursor: pointer; */
+    position: absolute;
+    width: 98%;
+    height: 96%;
+    top: 50%;
+    left: 50%;
+    border: 3px solid #0d6efd;
+    background-color: #0011ff;
+    transform: translate(-50%, -50%);
+}
+
+/* video{
+    border-radius: 40px;
+} */
+
+/* .custom-video__control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 30px;
+    width: 3em;
+    height: 3em;
+    white-space: nowrap;
+    line-height: 0;
+    transform: translate(-50%, -50%);
+    
+} */
+
+
+/* video::-webkit-media-controls {
+    position: relative;
+    z-index: 1;
+} */
+
+
+#custom-video__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    background-color: black;
+}
+
+.video-container.theater,
+.video-container.full-screen {
+    max-width: initial;
+    width: 100%;
+}
+
+.video-container.theater {
+    max-height: 90vh;
+}
+
+.video-container.full-screen {
+    max-height: 100vh;
+}
+
+video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.video-controls-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 12px;
+    color: white;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.video-controls-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .75), transparent);
+    width: 100%;
+    aspect-ratio: 6 / 1;
+    border-radius: 12px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.video-container:hover .video-controls-container,
+.video-container:focus-within .video-controls-container,
+.video-container.paused .video-controls-container {
+    opacity: 1;
+}
+
+.video-controls-container .controls {
+    display: flex;
+    gap: .5rem;
+    padding: .25rem;
+    align-items: center;
+}
+
+.video-controls-container .controls button {
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: .85;
+    transition: opacity 150ms ease-in-out;
+}
+
+.video-controls-container .controls button:hover {
+    opacity: 1;
+}
+
+.video-container.paused .pause-icon {
+    display: none;
+}
+
+.video-container:not(.paused) .play-icon {
+    display: none;
+}
+
+.video-container.theater .tall {
+    display: none;
+}
+
+.video-container:not(.theater) .wide {
+    display: none;
+}
+
+.video-container.full-screen .open {
+    display: none;
+}
+
+.video-container:not(.full-screen) .close {
+    display: none;
+}
+
+.volume-high-icon,
+.volume-low-icon,
+.volume-muted-icon {
+    display: none;
+}
+
+.video-container[data-volume-level="high"] .volume-high-icon {
+    display: block;
+}
+
+.video-container[data-volume-level="low"] .volume-low-icon {
+    display: block;
+}
+
+.video-container[data-volume-level="muted"] .volume-muted-icon {
+    display: block;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+}
+
+.volume-slider {
+    width: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: width 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.volume-container:hover .volume-slider,
+.volume-slider:focus-within {
+    width: 100px;
+    transform: scaleX(1);
+}
+
+.duration-container {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    flex-grow: 1;
+}
+
+.video-container.captions .captions-btn {
+    border-bottom: 3px solid red;
+}
+
+.video-controls-container .controls button.wide-btn {
+    width: 50px;
+}
+
+.timeline-container {
+    height: 7px;
+    margin-inline: .5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.timeline {
+    background-color: rgba(100, 100, 100, .5);
+    height: 3px;
+    width: 100%;
+    position: relative
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: calc(100% - var(--preview-position) * 100%);
+    background-color: rgb(150, 150, 150);
+    display: none;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: calc(100% - var(--progress-position) * 100%);
+    background-color: red;
+}
+
+.timeline .thumb-indicator {
+    --scale: 0;
+    position: absolute;
+    transform: translateX(-50%) scale(var(--scale));
+    height: 200%;
+    top: -50%;
+    left: calc(var(--progress-position) * 100%);
+    background-color: red;
+    border-radius: 50%;
+    transition: transform 150ms ease-in-out;
+    aspect-ratio: 1 / 1;
+}
+
+.timeline .preview-img {
+    position: absolute;
+    height: 80px;
+    aspect-ratio: 16 / 9;
+    top: -1rem;
+    transform: translate(-50%, -100%);
+    left: calc(var(--preview-position) * 100%);
+    border-radius: .25rem;
+    border: 2px solid white;
+    display: none;
+}
+
+.thumbnail-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.video-container.scrubbing .thumbnail-img {
+    display: block;
+}
+
+.video-container.scrubbing .preview-img,
+.timeline-container:hover .preview-img {
+    display: block;
+}
+
+.video-container.scrubbing .timeline::before,
+.timeline-container:hover .timeline::before {
+    display: block;
+}
+
+.video-container.scrubbing .thumb-indicator,
+.timeline-container:hover .thumb-indicator {
+    --scale: 1;
+}
+
+.video-container.scrubbing .timeline,
+.timeline-container:hover .timeline {
+    height: 100%;
+}

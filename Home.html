@@ -21,6 +21,8 @@
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.2/maps/maps-web.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 </head>
 
@@ -95,11 +97,14 @@
         </div>
         <div class="list_detection2" id="Land_Management_Menu">
           <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
-            <li>
-              <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection</a>
-            </li>
             <li><a class="dropdown-item1" href="#" id="Land_Use">Land Use</a></li>
             <li><a class="dropdown-item1" href="#" id="land_cover">Land Cover</a></li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection South-Africa</a>
+            </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Cahnge_Detection_Cairo">Change Detection Cairo (Egypt)</a>
+            </li>
           </ul>
         </div>
         <div class="list_detection2" id="Montoring_project_Menu">
@@ -117,6 +122,9 @@
             <li>
               <a class="dropdown-item1" href="#" id="Infrastructure_project">Infrastructure project</a>
             </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Ain_Sokhna_Port">Ain Sokhna Port</a>
+            </li>
           </ul>
         </div>
         <div class="list_detection2" id="Forestry_Menu">
@@ -126,6 +134,9 @@
             </li>
             <li>
               <a class="dropdown-item1" href="#" id="Wildfires">Wildfires Detection</a>
+            </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Detect_rice_straw_burning">Detect Rice Straw Burning</a>
             </li>
           </ul>
         </div>
@@ -165,7 +176,7 @@
                 <a class="dropdown-item1" href="#" id="Crop_Classification">Crop Classification Kenya</a>
               </li>
               <li>
-                <a class="dropdown-item1" href="#" id="Dumyat">Crop Classification Dumyat(Egypt)</a>
+                <a class="dropdown-item1" href="#" id="Dumyat">Crop Classification Damietta(Egypt)</a>
               </li>
             </ul>
           </div>
@@ -185,7 +196,7 @@
   </div>
 
   <div id="dialog_detect" class="dialog_detect row">
-    <div class="container_data_dialog " id="container_data_dialog">
+    <div class="container_data_dialog d-none" id="container_data_dialog">
       <div class="container_dashbord col-md-7 col-sm-7">
         <div id="page">
           <div class="news_image">
@@ -195,7 +206,7 @@
           </div>
           <div class="wrapper">
             <!-- &------------ Select Date ------------------ -->
-  
+
             <div class="select-menu" id="left_selector">
               <div class="select-btn">
                 <span class="sBtn-text">Date</span>
@@ -208,7 +219,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="select-menu1" id="right_selector">
               <div class="select-btn1">
                 <span class="sBtn-text1">Date</span>
@@ -221,9 +232,9 @@
                 </div>
               </div>
             </div>
-  
+
             <!-- &------------End Select Date ------------------ -->
-  
+
             <div class="before">
               <img class="content-image" id="img_left" src="../Geo File/Polygon Create/2-2022.jpg" draggable="false" />
             </div>
@@ -237,7 +248,7 @@
                 <polygon points="100 50 64 32 64 68 100 50" style="fill: #fff" />
               </svg>
             </div>
-  
+
           </div>
         </div>
       </div>
@@ -257,8 +268,30 @@
         </div>
       </div>
     </div>
-    <div>
-      <video src=""></video>
+    <div class="video_container" id="video_container">
+      <!-- <video width="100%" height="100%" muted controls autoplay id="video_element" class="custom-video__video"> 
+        <source src="videos/Crop_classification_Dumyat.mp4" type="video/mp4">
+      </video> -->
+      
+      <video controls muted autoplay id="video_element">
+        <source id="video_image" src="videos/Crop_classification_Dumyat.mp4" type="video/mp4" />
+        <p>
+          Your browser doesn't support HTML video.
+        </p>
+      </video>
+
+      <!-- <video class="custom-video__video" width="100%" height="100%" muted  id="video_element">
+        <source src="videos/Crop_classification_Dumyat.mp4" type="video/mp4" />
+      </video>-->
+      <!-- <video id="video_element" class="custom-video__video "  width="100%" height="100%" controls muted autoplay>
+        <source id="video_image" src="videos/Crop_classification_Dumyat.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video> -->
+      <!-- <div id="custom-video__control">►</div>  -->
+
+
+      </div>
+
     </div>
   </div>
   <div class="watermark">
